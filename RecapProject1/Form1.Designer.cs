@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             gbxCategory = new GroupBox();
-            cbxCategory = new ComboBox();
             lblCategory = new Label();
+            cbxCategory = new ComboBox();
             gbxSearch = new GroupBox();
-            lblSearch = new Label();
             txtSearch = new TextBox();
+            lblSearch = new Label();
             dgwProduct = new DataGridView();
             gbxCategory.SuspendLayout();
             gbxSearch.SuspendLayout();
@@ -51,14 +51,6 @@
             gbxCategory.TabStop = false;
             gbxCategory.Text = "Kategoriye Göre Listele";
             // 
-            // cbxCategory
-            // 
-            cbxCategory.FormattingEnabled = true;
-            cbxCategory.Location = new Point(97, 34);
-            cbxCategory.Name = "cbxCategory";
-            cbxCategory.Size = new Size(303, 28);
-            cbxCategory.TabIndex = 0;
-            // 
             // lblCategory
             // 
             lblCategory.AutoSize = true;
@@ -67,6 +59,15 @@
             lblCategory.Size = new Size(73, 20);
             lblCategory.TabIndex = 1;
             lblCategory.Text = "Kategori :";
+            // 
+            // cbxCategory
+            // 
+            cbxCategory.FormattingEnabled = true;
+            cbxCategory.Location = new Point(97, 34);
+            cbxCategory.Name = "cbxCategory";
+            cbxCategory.Size = new Size(303, 28);
+            cbxCategory.TabIndex = 0;
+            cbxCategory.SelectedIndexChanged += cbxCategory_SelectedIndexChanged;
             // 
             // gbxSearch
             // 
@@ -79,6 +80,14 @@
             gbxSearch.TabStop = false;
             gbxSearch.Text = "Ürün İsmine Göre Ara";
             // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(97, 31);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(303, 27);
+            txtSearch.TabIndex = 3;
+            txtSearch.TextChanged += txtSearch_TextChanged;
+            // 
             // lblSearch
             // 
             lblSearch.AutoSize = true;
@@ -87,13 +96,6 @@
             lblSearch.Size = new Size(39, 20);
             lblSearch.TabIndex = 2;
             lblSearch.Text = "Ara :";
-            // 
-            // txtSearch
-            // 
-            txtSearch.Location = new Point(93, 31);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(303, 27);
-            txtSearch.TabIndex = 3;
             // 
             // dgwProduct
             // 
@@ -108,12 +110,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1137, 677);
+            ClientSize = new Size(1137, 604);
             Controls.Add(dgwProduct);
             Controls.Add(gbxSearch);
             Controls.Add(gbxCategory);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Ürünler";
+            Load += Form1_Load;
             gbxCategory.ResumeLayout(false);
             gbxCategory.PerformLayout();
             gbxSearch.ResumeLayout(false);
